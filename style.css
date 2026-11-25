@@ -1,0 +1,584 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #F3F5F9;
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+    color: #283449;
+}
+button{
+    font-family: inherit;
+    cursor: pointer;
+}
+.wrap{
+    width: 850px;
+    max-width: 100%;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #E9ECF2;
+    border-radius: 14px;
+    box-shadow: 0 8px 35px rgba(36,52,79,0.07);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #EEF0F4;
+    margin-bottom: 22px;
+}
+.heading{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.headerIcon{
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background-color: #EAF0FF;
+    color: #477CF5;
+    font-size: 19px;
+}
+.heading h3{
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+.heading p{
+    margin: 3px 0 0;
+    color: #9AA3B1;
+    font-size: 10px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 12px;
+}
+.card{
+    border: 1px solid #EDF0F5;
+    border-radius: 10px;
+    padding: 15px 12px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background-color: #FFFFFF;
+    transition: 0.2s;
+}
+.iconCard{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+.info p{
+    margin: 0 0 3px;
+    color: #929BAB;
+    font-size: 10px;
+    font-weight: 500;
+}
+.info h4{
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+}
+#total .iconCard{
+    color: #46689E;
+    background-color: #E8EEFA;
+}
+#fiction .iconCard{
+    color: #A73531;
+    background-color: #F5E7E6;
+}
+#science .iconCard{
+    color: #3F926A;
+    background-color: #E7F7ED;
+}
+#history .iconCard{
+    color: #9B6127;
+    background-color: #FAEEDE;
+}
+#other .iconCard{
+    color: gray;
+    background-color: rgb(239, 239, 239);
+}
+.actions{
+    margin: 25px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    gap: 6px;
+    padding: 4px;
+    border: 1px solid #E9ECF2;
+    border-radius: 8px;
+    background-color: #F8F9FC;
+}
+.buttons button {
+    width: 31px;
+    height: 29px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #929BAB;
+    transition: 0.2s;
+}
+.buttons button.active{
+    background-color: white;
+    color: #477CF5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.buttons button:hover{
+    color: #477CF5;
+}
+.addBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 7px;
+    background-color: #477CF5;
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(71,124,245,0.2);
+}
+.tableWrap{
+    overflow-x: auto;
+    border: 1px solid #EDF0F5;
+    border-radius: 9px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+thead{
+    background-color: #F8F9FC;
+}
+th{
+    padding: 13px 14px;
+    color: #8993A4;
+    font-size: 10px;
+    font-weight: 600;
+}
+td{
+    padding: 13px 14px;
+    border-top: 1px solid #F0F2F6;
+    color: #68758A;
+    font-size: 10px;
+}
+tbody tr{
+    transition: 0.2s;
+}
+tbody tr:hover{
+    background-color: #FAFBFE;
+}
+.emptyBook{
+    text-align: center;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    /* background-color: #97ffd5; */
+}
+.emptyBook .icon{
+    color: rgb(149, 149, 149);
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.emptyBook h5{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 2px;
+}
+.addBtnEmpty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 7px;
+    background-color: #477CF5;
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+}
+.bookTitle{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #344054;
+    font-weight: 500;
+}
+.bookIcon{
+    width: 30px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #477CF5;
+    background-color: #EAF0FF;
+}
+.category{
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 500;
+}
+.green{
+    color: #29966B;
+    background-color: #E6F7EF;
+}
+
+.edit, .delete{
+    width: 27px;
+    height: 27px;
+    border: none;
+    border-radius: 6px;
+    font-size: 10px;
+    margin-right: 3px;
+    transition: 0.2s;
+}
+.edit{
+    color: #477CF5;
+    background-color: #EAF0FF;
+}
+.delete{
+    color: #DB6464;
+    background-color: #FCECEC;
+}
+.edit:hover, .delete:hover{
+    filter: brightness(0.95);
+    transform: scale(1.05);
+}
+.gridView{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.grid{
+    box-shadow: 0 8px 35px rgba(36,52,79,0.1);
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 15px 12px;
+    display: flex;
+    gap : 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header_grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.grid_num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAF0FF;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.grid_num h6{
+    font-size: 20px;
+    font-weight: 600;
+    color: #477CF5;
+}
+.wrap_Categroy p, .grid p, .grid h3 {
+    /* background-color: #29966B; */
+    margin: 0;
+}
+.grid_action_button{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap : 2px;
+}
+.grid_action_button button{
+    /* background-color: #29966B; */
+    width: 100%;
+}
+.wrap_Categroy p{
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 500;
+    color: #29966B;
+    background-color: #E6F7EF;
+    width: fit-content;
+}
+.grid h3{
+    font-size: 15px;
+}
+.grid p{
+    font-size: 10px;
+}
+
+.module_background{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.module{
+    width: 450px;
+    max-width: 90%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+}
+.module_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEF0F4;
+    margin-bottom: 22px;
+}
+.module_heading{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.module_icon{
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #EAF0FF;
+    color: #477CF5;
+    font-size: 18px;
+}
+.module_heading h3{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #283449;
+}
+.module_heading p{
+    margin: 3px 0 0;
+    font-size: 10px;
+    color: #929BAB;
+}
+.btnClose{
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    background-color: #F3F5F9;
+    color: #8792A5;
+    font-size: 15px;
+    transition: 0.2s;
+}
+.btnClose:hover{
+    background-color: #FCECEC;
+    color: #DB6464;
+}
+.form_group{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 17px;
+    flex: 1;
+    min-width: 0;
+}
+.form_group label{
+    font-size: 11px;
+    font-weight: 500;
+    color: #475467;
+}
+.form_group input, .form_group select{
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #E2E7EF;
+    border-radius: 7px;
+    outline: none;
+    background-color: white;
+    color: #344054;
+    font-family: inherit;
+    font-size: 11px;
+    transition: 0.2s;
+}
+.form_group input::placeholder{
+    color: #AAB2BF;
+}
+.form_group input:focus, .form_group select:focus{
+    border-color: #477CF5;
+    box-shadow: 0 0 0 3px rgba(71,124,245,0.1);
+}
+.form_row{
+    display: flex;
+    gap: 12px;
+}
+.module_footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    border-top: 1px solid #EEF0F4;
+    padding-top: 18px;
+    margin-top: 8px;
+}
+.btnCancel, .btnSubmit{
+    padding: 0px 15px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.btnCancel{
+    background-color: white;
+    border: 1px solid #E2E7EF;
+    color: #64748B;
+}
+.btnCancel:hover{
+    background-color: #F5F7FA;
+}
+.btnSubmit{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #477CF5;
+    border: 1px solid #477CF5;
+    color: white;
+}
+.btnSubmit:hover{
+    background-color: #3266DF;
+}
+
+.delete_background{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.delete_module{
+    width: 420px;
+    max-width: calc(100% - 40px);
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    animation: showModal 0.2s ease;
+}
+.delete_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete_icon{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 12px;
+    font-size: 20px;
+}
+.delete_header button{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+.delete_content h3{
+    margin: 20px 0 5px;
+    font-size: 20px;
+}
+.delete_content > p{
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.delete_book_info{
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+}
+.delete_info_row{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #e5e7eb;
+}
+.delete_info_row:last-child{
+    border-bottom: none;
+}
+.delete_info_row span{
+    color: #888;
+}
+.delete_info_row strong{
+    color: #333;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+.delete_footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+.delete_footer button{
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btnCancelDelete{
+    background: white;
+    border: 1px solid #ddd;
+    color: #555;
+}
+.btnConfirmDelete{
+    background: #dc2626;
+    border: 1px solid #dc2626;
+    color: white;
+}
+.btnConfirmDelete:hover{
+    background: #b91c1c;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="module_background" id="module">
+        <div class="module">
+            <div class="module_header">
+                <div class="module_heading">
+                    <div class="module_icon">
+                        <i class="fa-solid fa-book-medical" id="moduleIcon"></i>
+                    </div>
+                    <div>
+                        <h3 id="moduleName"></h3>
+                        <p id="moduleDescription"></p>
+                    </div>
+                </div>
+                <button class="btnClose" id="btnClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form>
+                <div class="form_group">
+                    <label>Book Title</label>
+                    <input type="text" placeholder="Enter book title" id="title" required>
+                </div>
+
+                <div class="form_group">
+                    <label>Author</label>
+                    <input type="text" placeholder="Enter author name" id="author" required>
+                </div>
+
+                <div class="form_row">
+                    <div class="form_group">
+                        <label>Category</label>
+                        <select required id="category">
+                            <option value="">Select category</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="module_footer">
+                    <button type="button" class="btnCancel" id="btnCancel">
+                        <p>Cancel</p>
+                    </button>
+                    <button type="button" class="btnSubmit" id="btnSubmit">
+                        <p id="btnSubmitText"></p>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="delete_background" id="deleteModule">
+        <div class="delete_module">
+            <div class="delete_header">
+                <div style="display: flex; align-items: center; gap : 10px">
+                    <div class="delete_icon">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                    <h3>Delete Book</h3>
+                </div>
+                <button class="btnClose" id="cancelDelete">
+                <i class=" fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="delete_content">
+                <p>Are you sure you want to delete this book? This action cannot be undone.</p>
+
+                <div class="delete_book_info">
+                    <div class="delete_info_row">
+                        <span>Book Title</span>
+                        <strong id="deleteTitle"></strong>
+                    </div>
+                    <div class="delete_info_row">
+                        <span>Author</span>
+                        <strong id="deleteAuthor"></strong>
+                    </div>
+                    <div class="delete_info_row">
+                        <span>Category</span>
+                        <strong id="deleteCategory"></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delete_footer">
+                <button type="button" class="btnCancelDelete" id="closeDelete">
+                    Cancel
+                </button>
+                <button type="button" class="btnConfirmDelete" id="confirmDelete">
+                    Delete Book
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <header>
+            <div class="heading">
+                <div class="headerIcon"><i class="fa-solid fa-book-open"></i></div>
+                <div>
+                    <h3>My Book Library</h3>
+                    <p>Manage your personal book collection</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="cards" id="cards">
+        </div>
+
+        <div class="actions">
+            <div class="buttons">
+                <button class="button active" id="tableView"><i class="fa-solid fa-table"></i></button>
+                <button class="button" id="gridView"><i class="fa-solid fa-grip"></i></button>
+            </div>
+            <button class="addBtn" id="addBtn"><i class="fa-solid fa-plus"></i> Add New Book</button>
+        </div>
+        <div class="view">
+
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
